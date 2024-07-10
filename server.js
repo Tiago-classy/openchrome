@@ -14,7 +14,7 @@ app.get('/open-chrome', (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Redirection service running on port ${PORT}`);
 });
