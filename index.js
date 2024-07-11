@@ -19,7 +19,7 @@ const app = express();
 
 app.get('/open-chrome', (req, res) => {
   const userAgent = req.headers['user-agent'];
-  const targetUrl = 'https://tiago-classy.github.io/index.html';
+  const targetUrl = 'tiago-classy.github.io/index.html';
 
   if (/android/i.test(userAgent)) {
     res.redirect(`googlechrome://${targetUrl}`);
