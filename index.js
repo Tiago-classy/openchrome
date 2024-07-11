@@ -4,10 +4,10 @@ const app = express();
 
 app.get('/open-chrome', (req, res) => {
   const userAgent = req.headers['user-agent'];
-  const targetUrl = 'https://tiago-classy.github.io/index.html';
+  const targetUrl = 'https://fingerprint.com/demo/';
   
   if (/android/i.test(userAgent)) {
-    // Attempt to open in Chrome on Android
+    // Attempt to open in Chrome on AndroidPO
     res.send(`
       <script>
         const url = '${targetUrl}';
