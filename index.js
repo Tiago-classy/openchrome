@@ -4,7 +4,9 @@ const app = express();
 
 app.get('/open-chrome', (req, res) => {
   const userAgent = req.headers['user-agent'];
-  const targetUrl = 'https://tiago-classy.github.io/XM_BOLD1';
+  const targetUrl = 'https://tiago-classy.github.io/XM_BOLD1_ANDROID';
+  const targetUrl1 = 'https://tiago-classy.github.io/XM_BOLD1_IOS';
+  const targetUrl2 = 'https://tiago-classy.github.io/XM_BOLD1_DESKTOP';
   
   if (/android/i.test(userAgent)) {
     // Attempt to open in Chrome on AndroidPO
@@ -20,15 +22,15 @@ app.get('/open-chrome', (req, res) => {
     // Attempt to open in Chrome on iOS
     res.send(`
       <script>
-        const url = '${targetUrl}';
-        const iosChromeUrl = 'googlechrome://${targetUrl.replace(/^https?:\/\//, '')}';
+        const url = '${targetUrl1}';
+        const iosChromeUrl = 'googlechrome://${targetUrl1.replace(/^https?:\/\//, '')}';
         window.location.href = iosChromeUrl;
         setTimeout(() => { window.location.href = url; }, 1000); // Fallback if chrome URL fails
       </script>
     `);
   } else {
     // Fallback to regular URL
-    res.redirect(targetUrl);
+    res.redirect(targetUrl2);
   }
 });
 
